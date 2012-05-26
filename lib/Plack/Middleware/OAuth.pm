@@ -74,7 +74,7 @@ sub prepare_app {
 		if( $fc >= 65 && $fc <= 90 ) {
 			my $default_config = $self->load_config_from_pkg( $provider_name );
 			for my $k ( keys %$default_config ) {
-				$config->{ $k } ||= $default_config->{ $k };
+				$config->{ $k } //= $default_config->{ $k };
 			}
 		}
 
